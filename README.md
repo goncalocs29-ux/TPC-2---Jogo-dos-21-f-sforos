@@ -7,7 +7,6 @@ def jogo_21():
 
     escolha = ""
     while escolha not in ("1","2"):
-      #quando for escolher se o utilizador é o primeiro ou segundo a jogar, o programa só correrá o restante código se a resposta for "1" ou "2"
         escolha = input("Queres ser o primeiro a jogar ou o segundo?")
 
     utilizador = (escolha == "1")
@@ -20,7 +19,6 @@ def jogo_21():
             jog = input(f"É a tua vez de jogar. Retiras (1-{max_tirar}): ")
             jog = int(jog)
             if jog < 1 or jog > max_tirar:
-              #jog está entre 1 e 4
                 print("Não aceite. Tenta de novo.")
                 continue
 
@@ -40,11 +38,8 @@ def jogo_21():
 
     else:
         utilizador = (escolha == "2")
-        #O utilizador joga em segundo; se cometer erro, perde imediatamente.
         while fosforos > 0:
-        # Turno do computador (primeiro a jogar)
           max_comp = fosforos if fosforos < 4 else 4
-        #Escolhe entre 1 e 4 de forma aleatória
           comp = (fosforos % 4) + 1
           print("O computador tira", comp)
           fosforos = fosforos - comp
